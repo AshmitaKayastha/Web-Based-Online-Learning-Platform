@@ -1,0 +1,84 @@
+.login-container {
+  background-color: #0f0f1a;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.background-shape.blue {
+  width: 300px;
+  height: 300px;
+  background: #0072ff;
+  top: -80px;
+  left: -100px;
+}
+
+.background-shape.orange {
+  width: 300px;
+  height: 300px;
+  background: #ff512f;
+  bottom: -80px;
+  right: -100px;
+}
+
+form {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 320px;
+  padding: 2rem;
+}
+
+form h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+}
+
+form button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form a {
+  display: block;
+  margin-top: 1rem;
+  color: #ccc;
+  text-align: center;
+  text-decoration: underline;
+}
