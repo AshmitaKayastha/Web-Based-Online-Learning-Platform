@@ -34,20 +34,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">KnowHow</div>
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#courses">Courses</a>
-          {user ? (
-            <a href="#logout" onClick={handleLogout}>Logout</a>
-          ) : (
-            <a href="#login" onClick={() => setShowLogin(true)}>Login</a>
-          )}
-        </div>
-      </nav>
+     
 
       {/* Login Modal */}
       {showLogin && (
@@ -122,7 +109,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <div>© 2025 KnowHow. All rights reserved.</div>
+          <div>© 2025 CA00. All rights reserved.</div>
           <div className="footer-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>

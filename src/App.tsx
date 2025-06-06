@@ -3,6 +3,7 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Courses from "./Components/Courses/PrivateRoute";
+import Navbar from "./Components/Navbar";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { getActiveUser } from "./LocalStorage";
 
@@ -10,10 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+        <Route element={<Layout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
           <Route element={<PrivateRoute />}>
             <Route path="courses" element={<Courses />} />
           </Route>
@@ -23,18 +24,18 @@ function App() {
   );
 }
 
-// Navbar + Wrapper
+// Layout wrapper with Navbar visible on all pages
 const Layout = () => (
   <>
-    {/* Navbar Component here (or inside Home.tsx if reused) */}
+    <Navbar />
     <Outlet />
   </>
 );
 
-// Private route wrapper
+// Private route protection
 const PrivateRoute = () => {
   const activeUser = getActiveUser();
-  return activeUser ? <Outlet /> : <Navigate to="/login" />;
+  return activeUser ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default App;
