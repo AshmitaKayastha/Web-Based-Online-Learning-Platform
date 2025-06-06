@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { clearActiveUser } from "../LocalStorage";
+import "../dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
