@@ -8,41 +8,34 @@ export interface IUserModel {
 }
 
 const addUser = (user: IUserModel) => {
-  var usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
-  var users = JSON.parse(usersStr) as IUserModel[];
+  const usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
+  const users = JSON.parse(usersStr) as IUserModel[];
   users.push(user);
-
   localStorage.setItem(REGISTERED_USERS_KEY, JSON.stringify(users));
 };
 
 const isUsernameExists = (username: string): boolean => {
-  var usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
-  var users = JSON.parse(usersStr) as IUserModel[];
-
-  var user = users.find((x) => x.username == username);
-  return user != null;
+  const usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
+  const users = JSON.parse(usersStr) as IUserModel[];
+  return users.some((user) => user.username === username);
 };
 
-const getUser = (username: string, password: string) => {
-  var usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
-  var users = JSON.parse(usersStr) as IUserModel[];
-
-  return users.find((x) => x.username == username && x.password == password);
+const getUser = (username: string, password: string): IUserModel | undefined => {
+  const usersStr = localStorage.getItem(REGISTERED_USERS_KEY) || "[]";
+  const users = JSON.parse(usersStr) as IUserModel[];
+  return users.find((user) => user.username === username && user.password === password);
 };
 
 const updateActiveUser = (user: IUserModel) => {
   localStorage.setItem(ACTIVE_USER, JSON.stringify(user));
 };
 
-const getActiveUser = () => {
-  var usersStr = localStorage.getItem(ACTIVE_USER) || null;
-  if (usersStr == null) return null;
-
-  var user = JSON.parse(usersStr) as IUserModel;
-  return user;
+const getActiveUser = (): IUserModel | null => {
+  const userStr = localStorage.getItem(ACTIVE_USER);
+  return userStr ? JSON.parse(userStr) as IUserModel : null;
 };
 
-const removeActiveUser = () => {
+const clearActiveUser = () => {
   localStorage.removeItem(ACTIVE_USER);
 };
 
@@ -53,5 +46,5 @@ export {
   isUsernameExists,
   updateActiveUser,
   getActiveUser,
-  removeActiveUser,
+  clearActiveUser, 
 };
