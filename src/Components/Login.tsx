@@ -32,35 +32,44 @@ const Login = () => {
     navigate("/"); // redirect to homepage after login
   };
 
-  return (
-    <div className="login-container">
-      <div className="background-shape blue"></div>
-      <div className="background-shape orange"></div>
-      <form onSubmit={handleSubmit}>
-        <h3>Login Here</h3>
-        <label>Username</label>
-        <input
-          type="text"
-          placeholder="Email"
-          id="username"
-          value={data.username}
-          onChange={handleInputChange}
-        />
+ return (
+  <div className="login-container">
+    <div className="login-wrapper">
+      <div className="login-left">
+        <form onSubmit={handleSubmit} className="login-form">
+          <h3>Login Here</h3>
 
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          value={data.password}
-          onChange={handleInputChange}
-        />
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Email"
+            id="username"
+            value={data.username}
+            onChange={handleInputChange}
+          />
 
-        <button>Log In</button>
-        <Link to="/register">Register</Link>
-      </form>
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            value={data.password}
+            onChange={handleInputChange}
+          />
+
+          <button type="submit">Log In</button>
+          <Link to="/register">Register</Link>
+        </form>
+      </div>
+      <div className="login-right" />
     </div>
-  );
+  </div>
+);
+
+
+
+
+
 };
 
 export default Login;

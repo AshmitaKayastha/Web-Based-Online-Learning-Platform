@@ -68,14 +68,14 @@ const Home = () => {
         loop={true}
         className="hero-swiper"
       >
-        <SwiperSlide className="slide" style={{ backgroundImage: `url('/images/2.jpg')` }}>
+        <SwiperSlide className="slide" style={{ backgroundImage: `url('/images/slide2.jpg')` }}>
           <div className="overlay">
             <h1>Build Your Dream With Passion</h1>
             <p>Learn, Code and start developing your own beautiful websites at no cost.</p>
             <button>Get Start</button>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="slide" style={{ backgroundImage: `url('/images/1.jpg')` }}>
+        <SwiperSlide className="slide" style={{ backgroundImage: `url('/images/slide1.jpg')` }}>
           <div className="overlay">
             <h1>Learn From Experts</h1>
             <p>Get guided by top developers and industry leaders.</p>
@@ -84,17 +84,7 @@ const Home = () => {
         </SwiperSlide>
       </Swiper>
 
-      {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="about-text">
-          <h2>Best E-learning Portal</h2>
-          <p>Learn at your pace, guided by experienced mentors and industry-relevant content tailored just for you.</p>
-          <button>Contact Us</button>
-        </div>
-        <div className="about-image">
-          <img src="/images/1.jpg" alt="About KnowHow" />
-        </div>
-      </section>
+      
 
       {/* Courses Section */}
       <section id="courses" className="courses-section">
@@ -106,17 +96,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div>© 2025 CA00. All rights reserved.</div>
-          <div className="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-          </div>
-        </div>
-      </footer>
+
+   
     </div>
   );
 };
